@@ -5,12 +5,10 @@ import static br.com.caelum.vraptor.view.Results.json;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
-
 import br.com.caelum.vraptor.Consumes;
-import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.model.AplicacaoRegistro;
 import br.com.caelum.vraptor.model.BemEServico;
@@ -28,19 +26,11 @@ import br.com.caelum.vraptor.model.TipoAplicacaoRegistroEnum;
 import br.com.caelum.vraptor.model.Titular;
 
 
-@Controller
+@Resource
 public class IndexController {
 
-	private final Result result;
-
-	/**
-	 * @deprecated CDI eyes only
-	 */
-	protected IndexController() {
-		this(null);
-	}
+	private Result result;
 	
-	@Inject
 	public IndexController(Result result) {
 		this.result = result;
 	}
